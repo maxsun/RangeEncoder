@@ -5,7 +5,6 @@ from typing import NamedTuple
 
 decimal.getcontext().prec = 100
 
-
 class Range:
     '''Represents a range of Decimals'''
     start: Decimal
@@ -62,15 +61,4 @@ class RangeMap:
 
     def __getitem__(self, key):
         return self.ranges[key]
-
-
-class Node:
-
-    left: 'Node'
-    right: 'Node'
-    value: Range
-
-rm = RangeMap()
-rm.add_range('A', Range(0, 0.9))
-rm.add_range('B', Range(0.9, 1))
 
